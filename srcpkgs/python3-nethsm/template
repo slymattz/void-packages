@@ -1,0 +1,18 @@
+# Template file for 'python3-nethsm'
+pkgname=python3-nethsm
+version=1.2.1
+revision=1
+build_style=python3-pep517
+makedepends="python3-flit_core"
+depends="python3-certifi python3-cryptography python3-dateutil python3-typing_extensions python3-urllib3"
+checkdepends="${depends} python3-pytest"
+short_desc="Python Library to manage NetHSM(s)"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="Apache-2.0, MIT"
+homepage="https://github.com/Nitrokey/nethsm-sdk-py"
+distfiles="https://github.com/Nitrokey/nethsm-sdk-py/archive/refs/tags/v${version}.tar.gz"
+checksum=b2f7ae0aa3606386a7d7d1dbfbe0d01513b05626af3a38abbecaf6def10a39cd
+
+post_install() {
+	vlicense LICENSE
+}
