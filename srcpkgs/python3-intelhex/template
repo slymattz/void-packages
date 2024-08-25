@@ -1,0 +1,16 @@
+# Template file for 'python3-intelhex'
+pkgname=python3-intelhex
+version=2.3.0
+revision=1
+build_style=python3-module
+makedepends="python3-setuptools"
+short_desc="Python library for Intel HEX files manipulations"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/python-intelhex/intelhex"
+distfiles="https://github.com/python-intelhex/intelhex/archive/${version}.tar.gz"
+checksum=b580f23c0b70a93da7830769c57466ae6fbbf894ed36bee426aef3ba8f259bd1
+
+post_install() {
+	vlicense LICENSE.txt
+}
