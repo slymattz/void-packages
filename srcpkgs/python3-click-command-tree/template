@@ -1,0 +1,17 @@
+# Template file for 'python3-click-command-tree'
+pkgname=python3-click-command-tree
+version=1.2.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-wheel"
+depends="python3-click"
+short_desc="Click plugin to show the command tree of your CLI"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/whwright/click-command-tree"
+distfiles="https://github.com/whwright/click-command-tree/archive/refs/tags/${version}.tar.gz"
+checksum=1c689898bb393bf1bdd88b91b11215a0a134142a5e7988ada7012a94c1b8c8bd
+
+post_install() {
+	vlicense LICENSE
+}
