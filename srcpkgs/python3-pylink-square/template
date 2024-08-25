@@ -1,0 +1,13 @@
+# Template file for 'python3-pylink-square'
+pkgname=python3-pylink-square
+version=1.2.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-wheel python3-setuptools"
+depends="python3-psutil python3-six"
+short_desc="Python interface for the SEGGER J-Link."
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="Apache-2.0"
+homepage="https://github.com/Square/pylink"
+distfiles="https://github.com/square/pylink/archive/refs/tags/v${version}.tar.gz"
+checksum=fccf9b03818ffd6d5f3809aa854226b79d3be3d48c025a511b3e3d55f79b2ede
