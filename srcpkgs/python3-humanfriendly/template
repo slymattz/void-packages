@@ -1,0 +1,18 @@
+# Template file for 'python3-humanfriendly'
+pkgname=python3-humanfriendly
+version=10.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-wheel"
+depends="python3"
+checkdepends="$depends"
+short_desc="Human friendly input/output for text interfaces using Python"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/xolox/python-humanfriendly"
+distfiles="https://github.com/xolox/python-humanfriendly/archive/refs/tags/${version}.tar.gz"
+checksum=a7f6ee6aa93933ffdf716a44163a8b1d17e8c95b3badb25efa37d562b2b93393
+
+post_install() {
+	vlicense LICENSE.txt
+}
