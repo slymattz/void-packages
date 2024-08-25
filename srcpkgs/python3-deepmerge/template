@@ -1,0 +1,18 @@
+# Template file for 'python3-deepmerge'
+pkgname=python3-deepmerge
+version=1.1.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-wheel python3-setuptools_scm"
+depends="python3"
+short_desc="Deep merging tool for Python core data structures"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/toumorokoshi/deepmerge"
+distfiles="https://github.com/toumorokoshi/deepmerge/archive/refs/tags/v${version}.tar.gz"
+checksum=bdafa906d280ad866aed9c252694da64b13381f511d91afdc02166bc311ed1f7
+export SETUPTOOLS_SCM_PRETEND_VERSION="${version}"
+
+post_install() {
+	vlicense LICENSE
+}
