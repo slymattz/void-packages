@@ -1,0 +1,17 @@
+# Template file for 'python3-click-option-group'
+pkgname=python3-click-option-group
+version=0.5.6
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-wheel"
+depends="python3-click"
+short_desc="Option groups missing in Click"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="BSD-3-Clause"
+homepage="https://github.com/click-contrib/click-option-group"
+distfiles="https://github.com/click-contrib/click-option-group/archive/refs/tags/v${version}.tar.gz"
+checksum=cc9d2df67b78e1a22f4e0a354b9eed4ce1bfa0f910bf7adca4364dc0534dea00
+
+post_install() {
+	vlicense LICENSE
+}
