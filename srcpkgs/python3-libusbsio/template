@@ -1,0 +1,20 @@
+# Template file for 'python3-libusbsio'
+pkgname=python3-libusbsio
+version=2.1.11
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-wheel python3-setuptools tar"
+depends="python3"
+short_desc="Library for USB-HID communication over SPI, I2C or GPIO"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="BSD-3-Clause"
+homepage="https://www.nxp.com/design/design-center/software/development-software/libusbsio-host-library-for-usb-enabled-mcus:LIBUSBSIO"
+distfiles="https://www.nxp.com/downloads/en/libraries/libusbsio-${version}-src.zip"
+checksum=b854d4ecbaab19c33cb1e77f59eec2442f67acc8911705ccaf838f7547449dae
+
+post_extract() {
+	rm -rf license test
+	cd "python/dist"
+	tar -xzvf "libusbsio-${version}.tar.gz"
+	mv libusbsio-${version}/* "$wrksrc"
+}
