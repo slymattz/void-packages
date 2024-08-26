@@ -1,0 +1,13 @@
+# Template file for 'python3-fire'
+pkgname=python3-fire
+version=0.6.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-flit_core python3-wheel"
+depends="python3-six python3-termcolor"
+short_desc="Library for automatically generating command line interfaces"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="Apache-2.0"
+homepage="https://github.com/google/python-fire"
+distfiles="https://github.com/google/python-fire/archive/refs/tags/v${version}.tar.gz"
+checksum=6aebaa0204d8a14c166cd101869be5a59b850cc479ab964f2defe3f08752e43c
