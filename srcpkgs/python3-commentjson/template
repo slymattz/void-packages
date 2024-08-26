@@ -1,0 +1,17 @@
+# Template file for 'python3-commentjson'
+pkgname=python3-commentjson
+version=0.9.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-wheel python3-setuptools"
+depends="python3-lark-parser"
+short_desc="Add Python and JavaScript style comments in your JSON files"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/vaidik/commentjson"
+distfiles="https://github.com/vaidik/commentjson/archive/refs/tags/v${version}.tar.gz"
+checksum=5eafe067937bb291b063cb26996336a8b8b8d29cd0fb00b22ce8afeaa8738197
+
+post_install() {
+	vlicense LICENSE.rst
+}
