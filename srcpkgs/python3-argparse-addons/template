@@ -1,0 +1,17 @@
+# Template file for 'python3-argparse-addons'
+pkgname=python3-argparse-addons
+version=0.12.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3"
+short_desc="Additional Python argparse types and actions"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/eerimoq/argparse_addons"
+distfiles="https://github.com/eerimoq/argparse_addons/archive/refs/tags/${version}.tar.gz"
+checksum=9d6a928b777299b7f7fec528a92bcbb63c61bf668019e9fad66093f3e6f0d410
+
+post_install() {
+	vlicense LICENSE
+}
