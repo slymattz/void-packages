@@ -1,0 +1,14 @@
+# Template file for 'python3-importlib_resources'
+pkgname=python3-importlib_resources
+version=6.4.4
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-wheel python3-setuptools python3-setuptools_scm"
+depends="python3"
+short_desc="Backport of the importlib.resources module"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="Apache-2.0"
+homepage="https://github.com/python/importlib_resources"
+distfiles="https://github.com/python/importlib_resources/archive/refs/tags/v${version}.tar.gz"
+checksum=18bb673667b34d5b96717ec9425e9e9d987c4cca3b73a370086ed2e923dc0e00
+export SETUPTOOLS_SCM_PRETEND_VERSION="${version}"
