@@ -1,0 +1,17 @@
+# Template file for 'python3-click-aliases'
+pkgname=python3-click-aliases
+version=1.0.4
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core python3-wheel"
+depends="python3-click"
+short_desc="Enable aliases for Click"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/click-contrib/click-aliases"
+distfiles="https://github.com/click-contrib/click-aliases/archive/refs/tags/v${version}.tar.gz"
+checksum=1474c7587a85af101337eb391af45f239131a8f2008f52a4a2188722049edabe
+
+post_install() {
+	vlicense LICENSE
+}
