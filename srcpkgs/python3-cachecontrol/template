@@ -1,0 +1,13 @@
+# Template file for 'python3-cachecontrol'
+pkgname=python3-cachecontrol
+version=0.14.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-flit_core"
+depends="python3-msgpack python3-requests"
+short_desc="CacheControl implements caching algorithms in httplib2"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="Apache-2.0"
+homepage="https://github.com/psf/cachecontrol"
+distfiles="${PYPI_SITE}/c/cachecontrol/cachecontrol-${version}.tar.gz"
+checksum=7db1195b41c81f8274a7bbd97c956f44e8348265a1bc7641c37dfebc39f0c938
