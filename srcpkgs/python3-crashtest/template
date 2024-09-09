@@ -1,0 +1,17 @@
+# Template file for 'python3-crashtest'
+pkgname=python3-crashtest
+version=0.4.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-poetry-core"
+depends="python3"
+short_desc="Manage Python errors with ease"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/sdispater/crashtest"
+distfiles="${PYPI_SITE}/c/crashtest/crashtest-${version}.tar.gz"
+checksum=80d7b1f316ebfbd429f648076d6275c877ba30ba48979de4191714a75266f0ce
+
+post_install() {
+	vlicense LICENSE
+}
