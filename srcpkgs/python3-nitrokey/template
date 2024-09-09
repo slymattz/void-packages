@@ -1,0 +1,21 @@
+# Template file for 'python3-nitrokey'
+pkgname=python3-nitrokey
+version=0.2.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="poetry"
+depends="python3"
+short_desc="Python SDK to use and configure Nitrokey devices"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="Apache-2.0, MIT"
+homepage="https://github.com/Nitrokey/nitrokey-sdk-py"
+distfiles="${PYPI_SITE}/n/nitrokey/nitrokey-${version}.tar.gz"
+checksum=a167e1cbb323d549eb0bbd06edfa64978ab8b86d0276f3b4047c1f258b33477d
+
+do_build() {
+	poetry build
+}
+
+post_install() {
+	vlicense LICENSES/MIT.txt
+}
