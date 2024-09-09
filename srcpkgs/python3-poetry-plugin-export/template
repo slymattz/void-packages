@@ -1,0 +1,20 @@
+# Template file for 'python3-poetry-plugin-export'
+pkgname=python3-poetry-plugin-export
+version=1.8.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core"
+depends="python3"
+# This plugin depends on poetry, but poetry depends on it as well.
+# Poetry is therefore not listed to avoid a cyclic dependecy.
+# See: https://github.com/python-poetry/poetry/pull/5980
+short_desc="Poetry plugin to export the dependencies to various formats"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/python-poetry/poetry-plugin-export"
+distfiles="${PYPI_SITE}/p/poetry_plugin_export/poetry_plugin_export-${version}.tar.gz"
+checksum=1fa6168a85d59395d835ca564bc19862a7c76061e60c3e7dfaec70d50937fc61
+
+post_install() {
+	vlicense LICENSE
+}
