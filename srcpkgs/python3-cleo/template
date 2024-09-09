@@ -1,0 +1,17 @@
+# Template file for 'python3-cleo'
+pkgname=python3-cleo
+version=2.1.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core"
+depends="python3-crashtest python3-rapidfuzz"
+short_desc="Create beautiful and testable command-line interfaces"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/python-poetry/cleo"
+distfiles="${PYPI_SITE}/c/cleo/cleo-${version}.tar.gz"
+checksum=0b2c880b5d13660a7ea651001fb4acb527696c01f15c9ee650f377aa543fd523
+
+post_install() {
+	vlicense LICENSE
+}
