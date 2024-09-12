@@ -1,0 +1,17 @@
+# Template file for 'python3-qt-material'
+pkgname=python3-qt-material
+version=2.14
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-Jinja2"
+short_desc="Material inspired stylesheet for PySide & PyQt"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="BSD-2-Clause"
+homepage="https://qt-material.readthedocs.io/en/latest"
+distfiles="${PYPI_SITE}/q/qt-material/qt-material-${version}.tar.gz"
+checksum=b5dbb5ade97217cf7ae336bb7c047c90beb39dc7f2048a498c916ad5f2f7ae23
+
+post_install() {
+	vlicense LICENSE
+}
