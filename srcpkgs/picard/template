@@ -1,19 +1,26 @@
 # Template file for 'picard'
 pkgname=picard
-version=2.12.1
-revision=2
+version=3.0
+revision=1
+_gitcommit=0297da2e3ded284ac52b4941bf3b1b749211e6fc
 build_style=python3-module
 make_install_args="--disable-autoupdate"
 hostmakedepends="gettext python3-setuptools"
 makedepends="python3-devel"
-depends="python3-PyQt5-multimedia chromaprint python3-mutagen
- python3-dateutil python3-discid python3-fasteners desktop-file-utils
- hicolor-icon-theme python3-yaml"
+depends="python3-discid python3-Markdown python3-mutagen
+ python3-PyJWT python3-pyqt6 python3-dateutil python3-yaml
+ python3-charset-normalizer python3-pyqt6-multimedia
+ python3-pyqt6-gui python3-pyqt6-widgets python3-pyqt6-network
+ python3-pyqt6-dbus"
 checkdepends="python3-pytest $depends"
 short_desc="MusicBrainz's audio tagger"
 maintainer="Michael Aldridge <maldridge@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="https://picard.musicbrainz.org/"
 changelog="https://picard.musicbrainz.org/changelog/"
-distfiles="https://data.musicbrainz.org/pub/musicbrainz/${pkgname}/${pkgname}-${version}.tar.gz"
-checksum=93a62309bdd2fde49152c15e52f4a009bebdb5dc68346154fe6caf12f5099b52
+distfiles="https://github.com/metabrainz/picard/archive/$_gitcommit.tar.gz"
+checksum=e2f52025fe837c743e49fa7779de8fa3b05b2b757beb7be3051af45ed61b2336
+
+post_patch() {
+	vsed -i requirements.txt -e '/PyQt6-Qt6/d'
+}
