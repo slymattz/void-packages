@@ -1,0 +1,17 @@
+# Template file for 'python3-selenium'
+pkgname=python3-selenium
+version=4.34.0
+revision=1
+build_style=python3-pep517
+build_helper="rust"
+hostmakedepends="python3-setuptools python3-setuptools-rust pkg-config
+ cargo"
+makedepends="libzstd-devel"
+depends="python3-urllib3 python3-trio python3-trio-websocket
+ python3-certifi python3-typing_extensions python3-websocket-client"
+short_desc="Official Python bindings for Selenium WebDriver"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="Apache-2.0"
+homepage="https://www.selenium.dev/"
+distfiles="${PYPI_SITE}/s/selenium/selenium-${version}.tar.gz"
+checksum=8b7eb05a0ed22f9bb2187fd256c28630824ad01d8397b4e68bc0af7dabf26c80
