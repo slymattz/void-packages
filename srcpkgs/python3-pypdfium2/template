@@ -1,0 +1,17 @@
+# Template file for 'python3-pypdfium2'
+pkgname=python3-pypdfium2
+version=5.3.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools_scm python3-wheel python3-ctypesgen"
+depends="python3-ctypesgen"
+short_desc="Python bindings to PDFium"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="Apache-2.0 OR BSD-3-Clause"
+homepage="https://github.com/pypdfium2-team/pypdfium2"
+distfiles="${PYPI_SITE}/p/pypdfium2/pypdfium2-${version}.tar.gz"
+checksum=2873ffc95fcb01f329257ebc64a5fdce44b36447b6b171fe62f7db5dc3269885
+
+post_install() {
+	vlicense MANIFEST.in
+}
