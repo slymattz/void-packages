@@ -1,0 +1,21 @@
+# Template file for 'python3-ctypesgen'
+pkgname=python3-ctypesgen
+version=1.1.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools_scm python3-wheel python3-toml"
+depends="python3"
+short_desc="Pure-python wrapper generator for ctypes (pypdfium2 fork)"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="BSD-2-Clause"
+homepage="https://github.com/pypdfium2-team/ctypesgen"
+distfiles="https://github.com/pypdfium2-team/ctypesgen/archive/refs/tags/${version}.tar.gz"
+checksum=c3709c9faf7d7e8a383714727f86ae6151fc14c28482e1171d7aec518e85387d
+
+pre_build() {
+	export SETUPTOOLS_SCM_PRETEND_VERSION="${version}"
+}
+
+post_install() {
+	vlicense LICENSE
+}
