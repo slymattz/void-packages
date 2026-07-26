@@ -1,18 +1,28 @@
 # Template file for 'python3-hidapi'
 pkgname=python3-hidapi
 version=0.15.0
-revision=1
-build_style=python3-module
-make_build_args="--with-libusb"
-hostmakedepends="python3-setuptools python3-wheel python3-Cython pkg-config"
+revision=2
+build_style=python3-pep517
+hostmakedepends="pkg-config python3-Cython"
 makedepends="eudev-libudev-devel libusb-devel python3-devel"
-depends="python3 hidapi python3-setuptools"
+depends="python3"
 short_desc="Cython interface to the hidapi"
 maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
 license="GPL-3.0-only OR BSD-3-Clause"
 homepage="https://github.com/trezor/cython-hidapi"
 distfiles="${PYPI_SITE}/h/hidapi/hidapi-${version}.tar.gz"
 checksum=ecbc265cbe8b7b88755f421e0ba25f084091ec550c2b90ff9e8ddd4fcd540311
+
+# https://github.com/trezor/cython-hidapi/tree/master#build-from-source
+export HIDAPI_WITH_LIBUSB=1
+
+do_check() {
+	local testdir="${wrksrc}/.xbps-testdir/$(date +%s)"
+	python3 -m installer --destdir "${testdir}" dist/*.whl
+
+	PYTHONPATH="${testdir}/${py3_sitelib}" \
+		python3 -c 'import hid; hid.enumerate()'
+}
 
 post_install() {
 	vlicense LICENSE-bsd.txt
