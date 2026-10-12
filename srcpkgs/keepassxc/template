@@ -1,7 +1,7 @@
 # Template file for 'keepassxc'
 pkgname=keepassxc
-version=2.7.12
-revision=3
+version=2.8.0
+revision=1
 build_style=cmake
 configure_args="-DWITH_TESTS=ON -DWITH_XC_UPDATECHECK=OFF -DWITH_XC_DOCS=ON
  -DWITH_XC_AUTOTYPE=$(vopt_if autotype ON OFF)
@@ -12,10 +12,10 @@ configure_args="-DWITH_TESTS=ON -DWITH_XC_UPDATECHECK=OFF -DWITH_XC_DOCS=ON
  -DWITH_XC_NETWORKING=$(vopt_if network ON OFF)
  -DWITH_XC_SSHAGENT=$(vopt_if sshagent ON OFF)
  -DWITH_XC_YUBIKEY=$(vopt_if yubikey ON OFF)"
-hostmakedepends="qt5-devel ruby-asciidoctor"
-makedepends="qt5-tools-devel qt5-svg-devel botan-devel libargon2-devel
- qrencode-devel readline-devel pcsclite-devel
- qt5-x11extras-devel
+hostmakedepends="pkg-config ruby-asciidoctor qt6-tools"
+makedepends="qt6-base-devel qt6-svg-devel
+ botan-devel libargon2-devel qrencode-devel
+ zlib-devel readline-devel keyutils-devel pcsclite-devel
  $(vopt_if autotype 'libXtst-devel libXi-devel')
  $(vopt_if keeshare minizip-devel)
  $(vopt_if yubikey 'libusb-devel')"
@@ -26,8 +26,8 @@ license="GPL-3.0-or-later, BSD-3-Clause, CC0-1.0, LGPL-2.0-only, LGPL-2.1-only,
  LGPL-3.0-or-later, Nokia-Qt-exception-1.1, MIT, BSL-1.0"
 homepage="https://keepassxc.org/"
 changelog="https://raw.githubusercontent.com/keepassxreboot/keepassxc/${version}/CHANGELOG.md"
-distfiles="https://github.com/keepassxreboot/keepassxc/releases/download/${version}/keepassxc-${version}-src.tar.xz"
-checksum=be34eeb297881adea4f894c7c6e4a1835bd7927f8043ddea495040df4792a7de
+distfiles="https://github.com/keepassxreboot/keepassxc/archive/refs/tags/2.8.0-beta1.tar.gz"
+checksum=8dda51b005ce5d4e52115e926d93d041ad7051a47df342c7b60464065d05487f
 
 build_options="autotype browser fdosecrets keeshare network passkey sshagent yubikey"
 desc_option_autotype="Include auto-type"
@@ -47,5 +47,5 @@ post_install() {
 }
 
 do_check() {
-	xvfb-run ninja -C build test || : #XXX: TestCli::testClip() fails
+	xvfb-run ninja -C build test
 }
