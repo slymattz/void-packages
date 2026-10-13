@@ -1,16 +1,23 @@
 # Template file for 'abcde'
 pkgname=abcde
-version=2.9.3
-revision=2
+version=2.12.2
+revision=1
 conf_files="/etc/${pkgname}.conf"
 depends="cd-discid perl-MusicBrainz-DiscID perl-WebService-MusicBrainz vorbis-tools"
 short_desc="CLI audio CD encoder and tagger"
 maintainer="Orphaned <orphan@voidlinux.org>"
-license="GPL-2.0-or-later"
-homepage="https://abcde.einval.com"
-distfiles="${homepage}/download/abcde-${version}.tar.gz"
-checksum=046cd0bba78dd4bbdcbcf82fe625865c60df35a005482de13a6699c5a3b83124
+license="GPL-2.0-or-later OR GPL-3.0-or-later"
+homepage="https://github.com/poddmo/abcde"
+changelog="https://raw.githubusercontent.com/poddmo/abcde/main/changelog"
+distfiles="https://github.com/poddmo/abcde/archive/refs/tags/${version}.tar.gz"
+checksum=a0b7006166d5c18a7d26ebbe6bb17b92169433a241ae026324b077d6d543dae0
 
 do_install() {
 	make prefix=${DESTDIR}/usr sysconfdir=${DESTDIR}/etc install
+}
+
+post_install() {
+	# abcde_version is currently set to abcde-2.12.1 in Makefile, hence the wildcard
+	# remove changelog, README, README and COPYING
+	rm -r "${PKGDESTDIR}"/usr/share/doc/abcde-*
 }
