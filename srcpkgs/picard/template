@@ -1,6 +1,6 @@
 # Template file for 'picard'
 pkgname=picard
-version=3.0.2
+version=3.0.3
 revision=1
 build_style=python3-pep517
 hostmakedepends="gettext python3-setuptools python3-shtab python3-pyqt6 python3-mutagen
@@ -17,7 +17,7 @@ license="GPL-2.0-or-later"
 homepage="https://picard.musicbrainz.org/"
 changelog="https://picard.musicbrainz.org/changelog/"
 distfiles="https://data.musicbrainz.org/pub/musicbrainz/picard/picard-${version}.tar.gz"
-checksum=ca875d573eb4b898f99821ec32978d9a6b47dc1f96b25f96608a75b6234d6098
+checksum=e97f5049495e41b55c0da99ea8506d3d5345936bf348aca1ce34d66ad3b52c03
 
 export PICARD_DISABLE_AUTOUPDATE=1
 
